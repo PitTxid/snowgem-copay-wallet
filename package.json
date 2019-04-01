@@ -40,11 +40,11 @@
   "homepage": "https://snowgem.org",
   "license": "MIT",
   "repository": {
-    "url": "git://github.com/snowgem/snowgem-copay-wallet.git",
+    "url": "git://github.com/pittxid/snowgem-copay-wallet.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/snowgem/snowgem-copay-wallet/issues"
+    "url": "https://github.com/pittxid/snowgem-copay-wallet/issues"
   },
   "engines": {
     "node": "6",
@@ -57,7 +57,7 @@
     "bezier-easing": "^2.0.3",
     "bhttp": "^1.2.4",
     "bitauth": "^0.2.1",
-    "bitcore-wallet-client-xsg": "git+https://github.com/snowgem/bitcore-wallet-client-xsg.git",
+    "bitcore-wallet-client": "git+https://github.com/pittxid/bitcore-wallet-client-snowgem.git",
     "bower": "^1.7.9",
     "cordova": "^7.1.0",
     "cordova-android": "^6.4.0",

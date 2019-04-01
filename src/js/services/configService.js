@@ -22,7 +22,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
         url: 'https://bitpay.com/wallet'
       },
       snowgem: {
-        url: 'https://github.com/snowgem/snowgem-copay-wallet/releases'
+        url: 'https://github.com/pittxid/snowgem-copay-wallet/releases'
       }
     },
 

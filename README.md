@@ -11,7 +11,7 @@ For a list of frequently asked questions please visit the [Copay FAQ](https://gi
 - Multiple wallet creation and management in-app
 - Intuitive, multisignature security for personal or shared wallets
 - Easy spending proposal flow for shared wallets and group payments
-- [BIP32](https://github.com/snowgem/bips/blob/master/bip-0032.mediawiki) Hierarchical deterministic (HD) address generation and wallet backups
+- [BIP32](https://github.com/pittxid/bips/blob/master/bip-0032.mediawiki) Hierarchical deterministic (HD) address generation and wallet backups
 - Device-based security: all private keys are stored locally, not in the cloud
 - Support for SnowGem testnet wallets
 - Synchronous access across all major mobile and desktop platforms
@@ -25,16 +25,16 @@ For a list of frequently asked questions please visit the [Copay FAQ](https://gi
 - Customizable wallet naming and background colors
 - Multiple languages supported
 - Available for [iOS](https://itunes.apple.com/us/app/copay/id951330296), [Android](https://play.google.com/store/apps/details?id=com.xsgcom.xsg-wallet),
-[Linux](https://github.com/snowgem/snowgem-copay-wallet/tags), [Windows](https://github.com/snowgem/snowgem-copay-wallet/tags) and [OS X](https://github.com/snowgem/snowgem-copay-wallet/tags) devices
+[Linux](https://github.com/pittxid/snowgem-copay-wallet/tags), [Windows](https://github.com/pittxid/snowgem-copay-wallet/tags) and [OS X](https://github.com/pittxid/snowgem-copay-wallet/tags) devices
 
 ## Testing in a Browser
 
-> **Note:** This method should only be used for development purposes. When running SnowGem Wallet in a normal browser environment, browser extensions and other malicious code might have access to internal data and private keys. For production use, see the latest official [releases](https://github.com/snowgem/snowgem-copay-wallet/tags).
+> **Note:** This method should only be used for development purposes. When running SnowGem Wallet in a normal browser environment, browser extensions and other malicious code might have access to internal data and private keys. For production use, see the latest official [releases](https://github.com/pittxid/snowgem-copay-wallet/tags).
 
 Clone the repo and open the directory:
 
 ```
-git clone https://github.com/snowgem/snowgem-copay-wallet.git
+git clone https://github.com/pittxid/snowgem-copay-wallet.git
 cd xsg-wallet
 ```
 
@@ -199,15 +199,15 @@ SnowGem implements a multisig wallet using [p2sh](https://en.snowgem.it/wiki/Pay
 
 To unlock a payment and spend the wallet's funds, a quorum of participant signatures must be collected and assembled in the transaction.  The funds cannot be spent without at least the minimum number of signatures required by the wallet configuration (2-of-3, 3-of-5, 6-of-6, etc.).  Once a transaction proposal is created, the proposal is distributed among the wallet participants for each to sign the transaction locally.  Finally, when the transaction is signed, the last signing participant will broadcast the transaction to the SnowGem network.
 
-SnowGem also implements [BIP32](https://github.com/snowgem/bips/blob/master/bip-0032.mediawiki) to generate new addresses for peers.  The public key that each participant contributes to the wallet is a BIP32 extended public key.  As additional public keys are needed for wallet operations (to produce new addresses to receive payments into the wallet, for example) new public keys can be derived from the participants' original extended public keys.  Once again, it's important to stress that each participant keeps their own private keys locally - private keys are not shared - and are used to sign transaction proposals to make payments from the shared wallet.
+SnowGem also implements [BIP32](https://github.com/pittxid/bips/blob/master/bip-0032.mediawiki) to generate new addresses for peers.  The public key that each participant contributes to the wallet is a BIP32 extended public key.  As additional public keys are needed for wallet operations (to produce new addresses to receive payments into the wallet, for example) new public keys can be derived from the participants' original extended public keys.  Once again, it's important to stress that each participant keeps their own private keys locally - private keys are not shared - and are used to sign transaction proposals to make payments from the shared wallet.
 
-For more information regarding how addresses are generated using this procedure, see: [Structure for Deterministic P2SH Multisignature Wallets](https://github.com/snowgem/bips/blob/master/bip-0045.mediawiki).
+For more information regarding how addresses are generated using this procedure, see: [Structure for Deterministic P2SH Multisignature Wallets](https://github.com/pittxid/bips/blob/master/bip-0045.mediawiki).
 
 ## SnowGem Backups and Recovery
 
 Since v1.2 SnowGem uses BIP39 mnemonics for backing up wallets.  The BIP44 standard is used for wallet address derivation. Multisig wallets use P2SH addresses, while non-multisig wallets use P2PKH.
 
-Information about backup and recovery procedures is available at: https://github.com/snowgem/snowgem-copay-wallet/blob/master/backupRecovery.md
+Information about backup and recovery procedures is available at: https://github.com/pittxid/snowgem-copay-wallet/blob/master/backupRecovery.md
 
 Previous versions of SnowGem used files as backups. See the following section.
 
@@ -220,7 +220,7 @@ SnowGem Wallet encrypts the backup with the [Stanford JS Crypto Library](http://
 
 The backup also contains the key `publicKeyRing` that holds the extended public keys of the Copayers.
 Depending on the key `derivationStrategy`, addresses are derived using
-[BIP44](https://github.com/snowgem/bips/blob/master/bip-0044.mediawiki) or [BIP45](https://github.com/snowgem/bips/blob/master/bip-0045.mediawiki). Wallets created in SnowGem Wallet v1.2 and forward always use BIP44, all previous wallets use BIP45. Also note that since SnowGem Wallet version v1.2, non-multisig wallets use address types Pay-to-PublicKeyHash (P2PKH) while multisig wallets still use Pay-to-ScriptHash (P2SH) (key `addressType` at the backup):
+[BIP44](https://github.com/pittxid/bips/blob/master/bip-0044.mediawiki) or [BIP45](https://github.com/pittxid/bips/blob/master/bip-0045.mediawiki). Wallets created in SnowGem Wallet v1.2 and forward always use BIP44, all previous wallets use BIP45. Also note that since SnowGem Wallet version v1.2, non-multisig wallets use address types Pay-to-PublicKeyHash (P2PKH) while multisig wallets still use Pay-to-ScriptHash (P2SH) (key `addressType` at the backup):
 
 | SnowGem Wallet Version  | Wallet Type   | Derivation Strategy   | Address Type  |
 |---|---|---|---|---|
@@ -265,7 +265,7 @@ When creating or joining a wallet, SnowGem Wallet will ask for two public keys f
 
 Every time you need to sign a transaction, the device will be needed to perform the signature. Follow the on screen instructions after clicking the `send` or `accept` buttons.
 
-Finally, in case you lose the device and you have the 24 word seed for the device, you can recover access to your funds using SnowGem Wallet, see: https://github.com/snowgem/snowgem-copay-wallet/blob/master/backupRecovery.md#hardware-wallets
+Finally, in case you lose the device and you have the 24 word seed for the device, you can recover access to your funds using SnowGem Wallet, see: https://github.com/pittxid/snowgem-copay-wallet/blob/master/backupRecovery.md#hardware-wallets
 
 
 ## Translations

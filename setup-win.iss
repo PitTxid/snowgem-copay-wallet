@@ -4,7 +4,7 @@
 #define MyAppName "SnowGem Copay Wallet"
 #define MyAppVersion "1.0.3"
 #define MyAppPublisher "SnowGem Project"
-#define MyAppURL "https://github.com/snowgem/snowgem-copay-wallet"
+#define MyAppURL "https://github.com/pittxid/snowgem-copay-wallet"
 #define MyAppExeName "SnowGem Copay Wallet.exe"
 #define AppId "804636ee-b017-4cad-8719-e58ac97ffa5c"
 
